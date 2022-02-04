@@ -69,7 +69,7 @@ function App() {
           )
         })}
       </div>
-      {display &&
+      {display ?
       display.map(result => {
         return (
           <>
@@ -77,6 +77,8 @@ function App() {
           </>
         )
       })
+      :
+      <h3>Try selecting another location</h3>
         }
     </section>
   )
