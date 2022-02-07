@@ -38,13 +38,6 @@ function App() {
         allLocations.push(data[i].location.toLocaleLowerCase())
       }
     }
-    // data.forEach(content => {
-    //   console.log(allLocations.includes(content.location))
-    //   console.log(allLocations)
-    //   if (!allLocations.includes(content.location)) {
-    //     allLocations.push(content.location)
-    //   }
-    // })
     setLocation(allLocations)
   }, [])
 
