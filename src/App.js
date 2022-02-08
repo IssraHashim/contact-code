@@ -34,8 +34,10 @@ function App() {
 
   useEffect(() => {
     for (let i=0; i < data.length; i++) {
-      if (!allLocations.includes(data[i].location.toLocaleLowerCase())) {
-        allLocations.push(data[i].location.toLocaleLowerCase())
+      if (data[i].location){
+        if (!allLocations.includes(data[i].location.toLocaleLowerCase())) {
+          allLocations.push(data[i].location.toLocaleLowerCase())
+        }
       }
     }
     setLocation(allLocations)
@@ -46,8 +48,10 @@ function App() {
     const thisLocation = event.target.value
     const results = []
     data.forEach(content => {
-      if (content.location.toLocaleLowerCase() === thisLocation) {
-        results.push(content.name)
+      if (content.location) {
+        if (content.location.toLocaleLowerCase() === thisLocation) {
+          results.push(content.name)
+        }
       }
     })
     setDisplay(results)
